@@ -1,5 +1,5 @@
 <pre>
-What I've learnd 
+What I've learned
 -json server
 -fetch method
 -POST method

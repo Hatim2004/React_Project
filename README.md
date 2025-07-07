@@ -1,7 +1,10 @@
 <pre>
--Text feild
--Link in MUI
--Box
--Card
--Drawer
+What I've learnd 
+-json server
+-fetch method
+-POST method
+-DELETE method
+-adding total 
+-Text Feild 
+-theme
 </pre>

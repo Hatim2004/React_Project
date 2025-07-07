@@ -1,3 +1,19 @@
 {
-  "Mydata": []
+  "Mydata": [
+    {
+      "id": "3dc8",
+      "Iteam": "apple ",
+      "Price": 2
+    },
+    {
+      "id": "3c08",
+      "Iteam": "orange",
+      "Price": 1
+    },
+    {
+      "id": "d839",
+      "Iteam": "tea",
+      "Price": 5
+    }
+  ]
 }

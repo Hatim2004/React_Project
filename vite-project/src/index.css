@@ -10,6 +10,24 @@ h1 {
 }
 
 .btn {
-  width: 12 vh;
+  width: 12vh;
+}
+
+.paper {
+  position: relative !important;
+  width: 16em;
+  height: 4em;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.close {
+  position: absolute !important;
+  right: 0;
+  top:  0;
 }
 

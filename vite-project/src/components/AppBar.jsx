@@ -12,6 +12,7 @@ import PetsIcon from '@mui/icons-material/Pets';
 import HomeIcon from '@mui/icons-material/Home';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import ModeIcon from '@mui/icons-material/Mode';
 
 export default function Appbar({ setMode, Mode }) {
   const [open, setOpen] = React.useState(false);
@@ -49,9 +50,15 @@ export default function Appbar({ setMode, Mode }) {
           <ListItemText primary='Home Page' />
         </ListItemButton>
 
-
-
-
+         <ListItemButton onClick={() => {
+          navigate('/create')
+        }} >
+          <ListItemIcon>
+            <ModeIcon />
+          </ListItemIcon>
+          <ListItemText primary='Create iteam' />
+        </ListItemButton>
+      </List>
 
         <ListItemButton onClick={() => {
           navigate('/facts')
@@ -61,7 +68,7 @@ export default function Appbar({ setMode, Mode }) {
           </ListItemIcon>
           <ListItemText primary='Cats API' />
         </ListItemButton>
-      </List>
+
     </Box>
   );
 

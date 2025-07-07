@@ -1,18 +1,25 @@
 import * as React from 'react';
-import MenuIcon from '@mui/icons-material/Menu';
-import { Avatar, MenuItem, IconButton, Typography, Toolbar, AppBar, Menu, Box, List, Drawer, Button, ListItem } from '@mui/material';
+import { Typography } from '@mui/material';
 import { lightBlue } from '@mui/material/colors';
-import Divider from '@mui/material/Divider';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Brightness4Icon from '@mui/icons-material/Brightness4';
-import Brightness5Icon from '@mui/icons-material/Brightness5';
-import PetsIcon from '@mui/icons-material/Pets';
+import { useNavigate } from 'react-router-dom'
+
+
+import { 
+  Menu as MenuIcon, 
+  Brightness4 as DarkIcon, 
+  Brightness5 as LightIcon, 
+} from '@mui/icons-material';
+
 import HomeIcon from '@mui/icons-material/Home';
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import PetsIcon from '@mui/icons-material/Pets';
 import ModeIcon from '@mui/icons-material/Mode';
+
+;
+import { 
+  Avatar, IconButton, Toolbar, AppBar, Drawer, Box, List, 
+  ListItem, ListItemButton, ListItemIcon, ListItemText, Divider 
+} from '@mui/material';
+
 
 export default function Appbar({ setMode, Mode }) {
   const [open, setOpen] = React.useState(false);
@@ -29,10 +36,10 @@ export default function Appbar({ setMode, Mode }) {
         } sx={{ mr: 'auto', ml: 'auto', color: 'inherit' }}>
 
           {Mode === "dark" ? (
-            <Brightness5Icon sx={{ color: 'gold' }} />
+            <LightIcon sx={{ color: 'gold' }} />
 
           ) : (
-            <Brightness4Icon sx={{ color: 'darkgray' }} />
+            <DarkIcon sx={{ color: 'darkgray' }} />
           )}
 
         </IconButton>
@@ -50,7 +57,7 @@ export default function Appbar({ setMode, Mode }) {
           <ListItemText primary='Home Page' />
         </ListItemButton>
 
-         <ListItemButton onClick={() => {
+        <ListItemButton onClick={() => {
           navigate('/create')
         }} >
           <ListItemIcon>
@@ -60,14 +67,14 @@ export default function Appbar({ setMode, Mode }) {
         </ListItemButton>
       </List>
 
-        <ListItemButton onClick={() => {
-          navigate('/facts')
-        }} >
-          <ListItemIcon>
-            <PetsIcon />
-          </ListItemIcon>
-          <ListItemText primary='Cats API' />
-        </ListItemButton>
+      <ListItemButton onClick={() => {
+        navigate('/facts')
+      }} >
+        <ListItemIcon>
+          <PetsIcon />
+        </ListItemIcon>
+        <ListItemText primary='Cats API' />
+      </ListItemButton>
 
     </Box>
   );
@@ -92,12 +99,14 @@ export default function Appbar({ setMode, Mode }) {
           <Avatar sx={{ bgcolor: lightBlue[500] }} >H</Avatar>
         </Toolbar>
       </AppBar>
+      <Box component='nav'>
+        <Drawer open={open} onClose={toggleDrawer(false)}>
 
-      <Drawer open={open} onClose={toggleDrawer(false)}>
+          {DrawerList}
 
-        {DrawerList}
+        </Drawer>
+      </Box>
 
-      </Drawer>
 
     </>
   );
